@@ -11,7 +11,7 @@ class Item {
   });
 
   String headerText;
-  String expandedText;
+  Widget expandedText;
   bool isExpanded;
 
 }
@@ -24,127 +24,70 @@ class StudentsFinalGrades extends StatefulWidget{
   State<StudentsFinalGrades> createState() => _StudentsFinalGradesState();
 }
 
-// class _StudentsFinalGradesState extends State<StudentsFinalGrades> {
-//
-//   final List<Item> _data = List<Item>.generate(10,
-//       (index) {
-//         return Item(
-//           headerText: 'Item $index',
-//           expandedText: 'This is item number $index',
-//         );
-//       }
-//   );
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(
-//         title: Text('Күндөлүк'),
-//         centerTitle: true,
-//       ),
-//       body: ListView(
-//         children: [
-//           DataTable(
-//             columnSpacing: 11.0,
-//             columns: [
-//               DataColumn(label: Text('#'), numeric: true),
-//               DataColumn(label: Text('предмет')),
-//               DataColumn(label: Text('I')),
-//               DataColumn(label: Text('II')),
-//               DataColumn(label: Text('III')),
-//               DataColumn(label: Text('IV')),
-//               DataColumn(label: Text('Итг')),
-//             ],
-//             rows: [
-//               DataRow(
-//                 cells: [
-//                   DataCell(Text('1')),
-//                   DataCell(Text('математика')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                 ],
-//               ),
-//               DataRow(
-//                 cells: [
-//                   DataCell(Text('2')),
-//                   DataCell(Text('литература')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                 ],
-//               ),
-//               DataRow(
-//                 cells: [
-//                   DataCell(Text('3')),
-//                   DataCell(Text('изо')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                 ],
-//               ),
-//               DataRow(
-//                 cells: [
-//                   DataCell(Text('4')),
-//                   DataCell(Text('дифференциальные уравнения')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                   DataCell(Text('5')),
-//                 ],
-//               ),
-//             ],
-//           ),
-//         ],
-//       ),
-//       bottomNavigationBar: BottomNavigationBar(
-//         onTap: (index) {
-//           if (index == 0) {
-//             Navigator.pushReplacement(
-//               context,
-//               MaterialPageRoute(builder: (context) => StudentsHome()),
-//             );
-//           } else if (index == 2) {
-//             Navigator.pushReplacement(
-//               context,
-//               MaterialPageRoute(builder: (context) => ProfileMenu()),
-//             );
-//           }
-//         },
-//         currentIndex: 1,
-//         items: [
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.format_list_numbered),
-//             label: 'Расписание',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.fact_check),
-//             label: 'Итоговые',
-//           ),
-//           BottomNavigationBarItem(
-//             icon: Icon(Icons.person),
-//             label: 'Профиль',
-//           ),
-//         ],
-//       ),
-//     );
-//   }
-// }
-
 class _StudentsFinalGradesState extends State<StudentsFinalGrades> {
 
   final List<Item> _data = List<Item>.generate(11,
           (index) {
         return Item(
           headerText: '${index+1} Класс',
-          expandedText: 'This is item number $index',
+          expandedText: DataTable(
+            columnSpacing: 11.0,
+            columns: [
+              DataColumn(label: Text('#'), numeric: true),
+              DataColumn(label: Text('предмет')),
+              DataColumn(label: Text('I')),
+              DataColumn(label: Text('II')),
+              DataColumn(label: Text('III')),
+              DataColumn(label: Text('IV')),
+              DataColumn(label: Text('Итг')),
+            ],
+            rows: [
+              DataRow(
+                cells: [
+                  DataCell(Text('1')),
+                  DataCell(Text('математика')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                ],
+              ),
+              DataRow(
+                cells: [
+                  DataCell(Text('2')),
+                  DataCell(Text('литература')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                ],
+              ),
+              DataRow(
+                cells: [
+                  DataCell(Text('3')),
+                  DataCell(Text('изо')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                ],
+              ),
+              DataRow(
+                cells: [
+                  DataCell(Text('4')),
+                  DataCell(Text('дифференциальные уравнения')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                  DataCell(Text('5')),
+                ],
+              ),
+            ],
+          ),
         );
       }
   );
@@ -153,7 +96,7 @@ class _StudentsFinalGradesState extends State<StudentsFinalGrades> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('List'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -171,17 +114,7 @@ class _StudentsFinalGradesState extends State<StudentsFinalGrades> {
                 );
               },
               body: ListTile(
-                title: Text(item.expandedText),
-                subtitle: const Text('To delete this item, click trash icon'),
-                trailing: const Icon(
-                  Icons.delete,
-                  color: Colors.orangeAccent,
-                ),
-                onTap: () {
-                  setState((){
-                    _data.removeWhere((Item currentItem) => item == currentItem);
-                  });
-                },
+                title: item.expandedText,
               ),
               isExpanded: item.isExpanded,
             );

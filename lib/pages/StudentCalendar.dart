@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_calendar/calendar.dart';
 import 'package:intl/intl.dart';
 
 
@@ -122,7 +121,7 @@ class _StudentCalendarState extends State<StudentCalendar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Date Picker Example'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
       body: Center(
@@ -132,7 +131,7 @@ class _StudentCalendarState extends State<StudentCalendar> {
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () => _selectDate(context),
-              child: Text('Select Date'),
+              child: Text('Выберите дату'),
             ),
             Text(
               'Selected Date: ${DateFormat('yyyy-MM-dd').format(_selectedDate.toLocal())}',

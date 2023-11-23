@@ -3,8 +3,6 @@ import 'package:school_diary/pages/HomeworkPages.dart';
 import 'package:school_diary/pages/ProfileMenu.dart';
 import 'package:school_diary/pages/StudentCalendar.dart';
 import 'package:school_diary/pages/StudentsFinalGrades.dart';
-import 'package:flutter_calendar_week/flutter_calendar_week.dart';
-import 'package:intl/intl.dart';
 
 class StudentsHome extends StatelessWidget {
 
@@ -77,7 +75,6 @@ class StudentsHome extends StatelessWidget {
     );
   }
 
-
   Widget buildDayButton(String day) {
     return ElevatedButton(
       onPressed: () {
@@ -92,7 +89,7 @@ class StudentsHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Күндөлүк'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
       body: Column(
@@ -246,9 +243,6 @@ class StudentsHome extends StatelessWidget {
                 ),
                 Expanded(
                   child: buildDayButton('Сб'),
-                ),
-                Expanded(
-                  child: buildDayButton('Вс'),
                 ),
               ],
             ),

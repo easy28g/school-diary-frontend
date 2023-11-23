@@ -14,7 +14,7 @@ class _HomeworkPagesState extends State<HomeworkPages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('VibeTime'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
       body: ListView(
@@ -54,8 +54,6 @@ class _HomeworkPagesState extends State<HomeworkPages> {
           ),
         ],
       ),
-
-
     );
   }
 

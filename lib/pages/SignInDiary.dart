@@ -18,12 +18,12 @@ class _SignInDairyState extends State<SignInDairy> {
     // Здесь вы можете добавить код для проверки логина и пароля
     // и выполнить необходимые действия в случае успешного входа
 
-    if (firstName == 'i' &&
-        secondName == 'f' &&
-        pinCode == 'c') {
+    if (firstName == 'i' && secondName == 'f' && pinCode == 'c') {
       Navigator.pushReplacementNamed(context, '/students-home');
       print('Вход выполнен успешно');
-      // Здесь можно добавить код для перехода на следующий экран
+    } else if (firstName == 'a' && secondName == 'a' && pinCode == 'a') {
+      Navigator.pushReplacementNamed(context, '/teachers-home');
+      print('Вход выполнен успешно');
     } else {
       print('Такой пользователь не найден!');
     }
