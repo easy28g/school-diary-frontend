@@ -100,6 +100,7 @@ class StudentCalendar extends StatefulWidget{
 // }
 
 class _StudentCalendarState extends State<StudentCalendar> {
+
   DateTime _selectedDate = DateTime.now();
 
   Future<void> _selectDate(BuildContext context) async {

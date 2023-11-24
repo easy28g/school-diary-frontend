@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:school_diary/pages/ProfileMenu.dart';
-import 'package:school_diary/pages/StudentsHome.dart';
+
+import 'StudentsHome.dart';
+import 'StudentsProfileMenu.dart';
 
 class Item {
 
@@ -131,7 +132,7 @@ class _StudentsFinalGradesState extends State<StudentsFinalGrades> {
           } else if (index == 2) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => ProfileMenu()),
+              MaterialPageRoute(builder: (context) => StudentsProfileMenu()),
             );
           }
         },

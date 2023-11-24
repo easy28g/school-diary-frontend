@@ -24,6 +24,9 @@ class _SignInDairyState extends State<SignInDairy> {
     } else if (firstName == 'a' && secondName == 'a' && pinCode == 'a') {
       Navigator.pushReplacementNamed(context, '/teachers-home');
       print('Вход выполнен успешно');
+    } else if (firstName == 'p' && secondName == 'p' && pinCode == 'p') {
+      Navigator.pushReplacementNamed(context, '/parents-home');
+      print('Вход выполнен успешно');
     } else {
       print('Такой пользователь не найден!');
     }

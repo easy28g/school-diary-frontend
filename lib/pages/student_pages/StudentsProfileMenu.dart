@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:school_diary/pages/StudentsFinalGrades.dart';
-import 'package:school_diary/pages/StudentsHome.dart';
 
-class ProfileMenu extends StatelessWidget {
+import 'StudentsFinalGrades.dart';
+import 'StudentsHome.dart';
+
+class StudentsProfileMenu extends StatelessWidget {
 
   // Замените эти значения на реальные значения
   String lastName = "Ваша фамилия";
@@ -17,7 +18,7 @@ class ProfileMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Профиль'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
       body: Center(

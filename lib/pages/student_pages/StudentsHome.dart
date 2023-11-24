@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:school_diary/pages/HomeworkPages.dart';
-import 'package:school_diary/pages/ProfileMenu.dart';
-import 'package:school_diary/pages/StudentCalendar.dart';
-import 'package:school_diary/pages/StudentsFinalGrades.dart';
+
+import 'HomeworkPages.dart';
+import 'StudentCalendar.dart';
+import 'StudentsFinalGrades.dart';
+import 'StudentsProfileMenu.dart';
 
 class StudentsHome extends StatelessWidget {
 
@@ -113,94 +114,6 @@ class StudentsHome extends StatelessWidget {
                   _buildDataRow(context, '4', '10:35', 'Дифференциальное уравнение', '+', ''),
                 ],
               ),
-                // DataTable(
-                //   columnSpacing: 11.0,
-                //   columns: [
-                //     DataColumn(label: Text('#'), numeric: true),
-                //     DataColumn(label: Text('время')),
-                //     DataColumn(label: Text('занятия')),
-                //     DataColumn(label: Text('+/-')),
-                //     DataColumn(label: Text('оценка')),
-                //   ],
-                //   rows: [
-                //     DataRow(
-                //       cells: [
-                //         DataCell(Text('1')),
-                //         DataCell(Text('08:00')),
-                //         DataCell(ElevatedButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                 builder: (context) => HomeworkPages(),
-                //               ),
-                //             );
-                //           },
-                //           child: Text('математика'),
-                //         )),
-                //         DataCell(Text('+')),
-                //         DataCell(Text('5')),
-                //       ],
-                //     ),
-                //     DataRow(
-                //       cells: [
-                //         DataCell(Text('2')),
-                //         DataCell(Text('08:50')),
-                //         DataCell(ElevatedButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                 builder: (context) => HomeworkPages(),
-                //               ),
-                //             );
-                //           },
-                //           child: Text('литература'),
-                //         )),
-                //         DataCell(Text('+')),
-                //         DataCell(Text('')),
-                //       ],
-                //     ),
-                //     DataRow(
-                //       cells: [
-                //         DataCell(Text('3')),
-                //         DataCell(Text('09:40')),
-                //         DataCell(ElevatedButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                 builder: (context) => HomeworkPages(),
-                //               ),
-                //             );
-                //           },
-                //           child: Text('изо'),
-                //         )),
-                //         DataCell(Text('+')),
-                //         DataCell(Text('5; 5')),
-                //       ],
-                //     ),
-                //     DataRow(
-                //       cells: [
-                //         DataCell(Text('4')),
-                //         DataCell(Text('10:35')),
-                //         DataCell(ElevatedButton(
-                //           onPressed: () {
-                //             Navigator.push(
-                //               context,
-                //               MaterialPageRoute(
-                //                 builder: (context) => HomeworkPages(),
-                //               ),
-                //             );
-                //           },
-                //           child: Text('дифференциальные уравнения'),
-                //         )),
-                //         DataCell(Text('+')),
-                //         DataCell(Text('')),
-                //       ],
-                //     ),
-                //   ],
-                // ),
               ],
             ),
           ),
@@ -259,7 +172,7 @@ class StudentsHome extends StatelessWidget {
           } else if (index == 2) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => ProfileMenu()),
+              MaterialPageRoute(builder: (context) => StudentsProfileMenu()),
             );
           }
         },
