@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_diary/pages/manager_pages/ManagersHome.dart';
 import 'package:school_diary/pages/parent_pages/ParentsHome.dart';
 import 'package:school_diary/pages/student_pages/StudentsProfileMenu.dart';
 import 'package:school_diary/pages/SignInDiary.dart';
@@ -20,5 +21,6 @@ void main() => runApp(MaterialApp(
     '/homework-on-subject': (context) => HomeworkPages(),
     '/teachers-home': (context) => TeachersHome(),
     '/parents-home': (context) => ParentsHome(),
+    '/managers-home': (context) => ManagersHome(),
   },
 ));
