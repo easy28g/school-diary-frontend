@@ -111,11 +111,12 @@ class _AddTeacherState extends State<AddTeacher> {
                   _middleNameController.clear();
                   _addressController.clear();
                   _selectedSubjects.clear();
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ManagersHome(),
                     ),
+                        (route) => false,
                   );
                 },
                 child: Text('Зарегистрировать учителя'),

@@ -96,11 +96,12 @@ class _AddStudentState extends State<AddStudent> {
                   _middleNameController.clear();
                   _addressController.clear();
                   _classController.clear();
-                  Navigator.push(
+                  Navigator.pushAndRemoveUntil(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ManagersHome(),
                     ),
+                        (route) => false,
                   );
                 },
                 child: Text('Зарегистрировать ученика'),
