@@ -94,7 +94,7 @@ class _AddTeacherState extends State<AddTeacher> {
                 });
               },
               initialValue: _selectedSubjects,
-              buttonText: Text('Выберите предметы'),
+              buttonText: Text('Выберите предмет'),
             ),
               SizedBox(height: 16.0),
               ElevatedButton(

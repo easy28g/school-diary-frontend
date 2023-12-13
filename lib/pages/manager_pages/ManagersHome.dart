@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'AddStudent.dart';
+import 'AddSubjects.dart';
+import 'AddSubjectsToTeacher.dart';
 import 'AddTeacher.dart';
+import 'ListGroups.dart';
+import 'ListTeachers.dart';
 
 class ManagersHome extends StatefulWidget {
   @override
@@ -74,7 +78,12 @@ class _ManagersHomeState extends State<ManagersHome> {
                     height: 70,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Ваше действие при нажатии на кнопку
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListGroups()
+                          ),
+                        );
                       },
                       child: Text('Список классов'),
                     ),
@@ -88,7 +97,12 @@ class _ManagersHomeState extends State<ManagersHome> {
                     height: 70,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Ваше действие при нажатии на кнопку
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListTeachers()
+                          ),
+                        );
                       },
                       child: Text('Список Учителей'),
                     ),
@@ -104,7 +118,12 @@ class _ManagersHomeState extends State<ManagersHome> {
                     height: 70,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Ваше действие при нажатии на кнопку
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddSubjects()
+                          ),
+                        );
                       },
                       child: Text('Добавить предмет'),
                     ),
@@ -116,7 +135,12 @@ class _ManagersHomeState extends State<ManagersHome> {
                     height: 70,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Ваше действие при нажатии на кнопку
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddSubjectsToTeacher()
+                          ),
+                        );
                       },
                       child: Text('Добавить предмет учителю'),
                     ),
@@ -124,6 +148,44 @@ class _ManagersHomeState extends State<ManagersHome> {
                 ),
               ],
             ),
+            Row(
+              children: [
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    height: 70,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) =>
+                        //   ),
+                        // );
+                      },
+                      child: Text('Удалить ученика'),
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: Container(
+                    margin: EdgeInsets.all(8.0),
+                    height: 70,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //       builder: (context) =>
+                        //   ),
+                        // );
+                      },
+                      child: Text('Удалить учителя'),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
