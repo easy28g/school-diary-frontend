@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ClassJournalForTeachers.dart';
+import 'ClassesJournalsForTeachers.dart';
 import 'StudentsList.dart';
 import 'TeachersCalendar.dart';
 import 'TeachersProfileMenu.dart';
@@ -170,7 +170,7 @@ class _TeachersHomeState extends State<TeachersHome> {
           if (index == 1) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => ClassJournalForTeachers()),
+              MaterialPageRoute(builder: (context) => ClassesJournalsForTeachers()),
             );
           } else if (index == 2) {
             Navigator.pushReplacement(

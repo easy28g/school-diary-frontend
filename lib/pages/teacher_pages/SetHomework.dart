@@ -21,29 +21,50 @@ class _SetHomeworkState extends State<SetHomework> {
         title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: TextField(
-            controller: _textFieldController,
-            decoration: InputDecoration(
-              labelText: 'Задания',
-              border: OutlineInputBorder(),
-            ),
-            maxLines: null,
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.fromLTRB(18.0, 60.0, 18.0, 0.0),
+        child: TextField(
+          controller: _textFieldController,
+          decoration: InputDecoration(
+            labelText: 'Задание',
+            border: OutlineInputBorder(),
           ),
+          maxLines: null,
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           String enteredText = _textFieldController.text;
-          print('Entered Text: $enteredText'); // терминал
+          print('Entered Text: $enteredText');
           _textFieldController.clear();
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => StudentsList(), // Замените на ваш следующий экран
-            ),
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Домашнее задание'),
+                content: Text('$enteredText'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Закрыть виджет SetHomework
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StudentsList(),
+                        ),
+                      );
+                    },
+                    child: Text('Сохранить'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Закрыть диалоговое окно
+                    },
+                    child: Text('Отменить'),
+                  ),
+                ],
+              );
+            },
           );
         },
         child: Icon(Icons.check),

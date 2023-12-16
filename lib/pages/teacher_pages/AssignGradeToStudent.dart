@@ -21,7 +21,7 @@ class _AssignGradeToStudentState extends State<AssignGradeToStudent> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.fromLTRB(18.0, 35.0, 18.0, 0.0),
+        padding: const EdgeInsets.fromLTRB(18.0, 60.0, 18.0, 0.0),
         child: Column(
           children: [
             TextField(
@@ -53,11 +53,35 @@ class _AssignGradeToStudentState extends State<AssignGradeToStudent> {
           print('Entered Text2: $markText'); // терминал
           _textFieldController.clear();
           _textFieldControllerMark.clear();
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => StudentsList(),
-            ),
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Отметить успеваемость'),
+                content: Text('Описание: $enteredText \n'
+                              'Оценка: $markText'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Закрыть виджет SetHomework
+                      Navigator.pop(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StudentsList(),
+                        ),
+                      );
+                    },
+                    child: Text('Сохранить'),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop(); // Закрыть диалоговое окно
+                    },
+                    child: Text('Отменить'),
+                  ),
+                ],
+              );
+            },
           );
         },
         child: Icon(Icons.check),

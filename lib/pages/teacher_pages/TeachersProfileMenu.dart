@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ClassJournalForTeachers.dart';
+import 'ClassesJournalsForTeachers.dart';
 import 'TeachersHome.dart';
 
 class TeachersProfileMenu extends StatefulWidget{
@@ -49,7 +49,7 @@ class _TeachersProfileMenuState extends State<TeachersProfileMenu> {
           } else if (index == 1) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => ClassJournalForTeachers()),
+              MaterialPageRoute(builder: (context) => ClassesJournalsForTeachers()),
             );
           }
         },

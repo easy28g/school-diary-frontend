@@ -52,7 +52,7 @@ class _StudentsListState extends State<StudentsList> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('VibeTime Күндөлүк'),
+        title: Text('Алгебра 9В'),
         centerTitle: true,
       ),
       body: Column(
@@ -159,9 +159,34 @@ class _StudentsListState extends State<StudentsList> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text('Посещаемость учащихся'),
+                            content: Text('Всего: 24 \n'
+                                          'Присутствует: 23 \n'
+                                          'Отсутствует: 1',
+                                          style: TextStyle(fontSize: 18.0)),
+                            actions: [
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(); // Закрыть диалоговое окно
+                                },
+                                child: Text('Сохранить'),
+                              ),
+                              TextButton(
+                                onPressed: () {
+                                  Navigator.of(context).pop(); // Закрыть диалоговое окно
+                                },
+                                child: Text('Отменить'),
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
-                    child: Text('Сохранить'),
+                    child: Text('Отметить'),
                   ),
                 ]),
           ),
