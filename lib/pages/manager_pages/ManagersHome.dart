@@ -4,6 +4,7 @@ import 'AddStudent.dart';
 import 'AddSubjects.dart';
 import 'AddSubjectsToTeacher.dart';
 import 'AddTeacher.dart';
+import 'DeleteStudent.dart';
 import 'DeleteTeacher.dart';
 import 'ListGroups.dart';
 import 'ListTeachers.dart';
@@ -157,12 +158,12 @@ class _ManagersHomeState extends State<ManagersHome> {
                     height: 70,
                     child: ElevatedButton(
                       onPressed: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) =>
-                        //   ),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => DeleteStudent()
+                          ),
+                        );
                       },
                       child: Text('Удалить ученика'),
                     ),
