@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'ClassJournalForTeachers.dart';
 import 'StudentsList.dart';
 import 'TeachersCalendar.dart';
 import 'TeachersProfileMenu.dart';
@@ -167,10 +168,10 @@ class _TeachersHomeState extends State<TeachersHome> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           if (index == 1) {
-            // Navigator.pushReplacement(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => StudentsFinalGrades()),
-            // );
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => ClassJournalForTeachers()),
+            );
           } else if (index == 2) {
             Navigator.pushReplacement(
               context,
@@ -186,7 +187,7 @@ class _TeachersHomeState extends State<TeachersHome> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fact_check),
-            label: 'Итоговые',
+            label: 'Журнал',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),

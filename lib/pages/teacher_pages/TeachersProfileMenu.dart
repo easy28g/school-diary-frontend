@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:school_diary/pages/teacher_pages/TeachersHome.dart';
+
+import 'ClassJournalForTeachers.dart';
+import 'TeachersHome.dart';
 
 class TeachersProfileMenu extends StatefulWidget{
 
@@ -10,15 +12,33 @@ class TeachersProfileMenu extends StatefulWidget{
 }
 
 class _TeachersProfileMenuState extends State<TeachersProfileMenu> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('VibeTime Күндөлүк'),
+        title: Text('Профиль'),
         centerTitle: true,
       ),
-      body: Text('Teachers Profile'),
+      body: Container(
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Text('Идентификационный номер: 0'),
+                  Text('Фамилия: '),
+                  Text('Имя: '),
+                  Text('Отчество: '),
+                  Text('Средняя школа №1'),
+                  Text('Предмет: '),
+                  Text('Аккаунт: ')
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           if (index == 0) {
@@ -27,10 +47,10 @@ class _TeachersProfileMenuState extends State<TeachersProfileMenu> {
               MaterialPageRoute(builder: (context) => TeachersHome()),
             );
           } else if (index == 1) {
-            // Navigator.pushReplacement(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => TeachersProfileMenu()),
-            // );
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => ClassJournalForTeachers()),
+            );
           }
         },
         currentIndex: 2,
@@ -41,7 +61,7 @@ class _TeachersProfileMenuState extends State<TeachersProfileMenu> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.fact_check),
-            label: 'Итоговые',
+            label: 'Журнал',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
@@ -51,5 +71,4 @@ class _TeachersProfileMenuState extends State<TeachersProfileMenu> {
       ),
     );
   }
-
 }
