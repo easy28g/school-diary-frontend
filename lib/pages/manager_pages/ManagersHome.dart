@@ -8,6 +8,8 @@ import 'DeleteStudent.dart';
 import 'DeleteTeacher.dart';
 import 'ListGroups.dart';
 import 'ListTeachers.dart';
+import 'ManagersProfileMenu.dart';
+import 'SchedulePlanning.dart';
 
 class ManagersHome extends StatefulWidget {
   @override
@@ -194,15 +196,15 @@ class _ManagersHomeState extends State<ManagersHome> {
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index) {
           if (index == 1) {
-            // Navigator.pushReplacement(
-            //   context,
-              // MaterialPageRoute(builder: (context) => ParentalControlFinalGrades()),
-            // );
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => SchedulePlanning()),
+            );
           } else if (index == 2) {
-            // Navigator.pushReplacement(
-            //   context,
-            //   MaterialPageRoute(builder: (context) => ParentsProfileMenu()),
-            // );
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => ManagersProfileMenu()),
+            );
           }
         },
         currentIndex: 0,
