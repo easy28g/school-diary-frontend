@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'AssignGradeToStudent.dart';
+import 'EditingGradeStudent.dart';
 import 'SetHomework.dart';
 import 'TeachersCalendar.dart';
 
@@ -114,7 +115,22 @@ class _StudentsListState extends State<StudentsList> {
                                 ),
                               ),
                             ),
-                            DataCell(Text('5;5')),
+                            DataCell(
+                                InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => EditingGradeStudent(),
+                                        settings: RouteSettings(
+                                          arguments: '5;5',
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: Text('5;5'),
+                                )
+                            ),
                           ],
                         ),
                       )
@@ -173,13 +189,13 @@ class _StudentsListState extends State<StudentsList> {
                                 onPressed: () {
                                   Navigator.of(context).pop(); // Закрыть диалоговое окно
                                 },
-                                child: Text('Сохранить'),
+                                child: Text('Отменить'),
                               ),
                               TextButton(
                                 onPressed: () {
                                   Navigator.of(context).pop(); // Закрыть диалоговое окно
                                 },
-                                child: Text('Отменить'),
+                                child: Text('Сохранить'),
                               ),
                             ],
                           );

@@ -63,6 +63,12 @@ class _AssignGradeToStudentState extends State<AssignGradeToStudent> {
                 actions: [
                   TextButton(
                     onPressed: () {
+                      Navigator.of(context).pop(); // Закрыть диалоговое окно
+                    },
+                    child: Text('Отменить'),
+                  ),
+                  TextButton(
+                    onPressed: () {
                       Navigator.of(context).pop(); // Закрыть виджет SetHomework
                       Navigator.pop(
                         context,
@@ -72,12 +78,6 @@ class _AssignGradeToStudentState extends State<AssignGradeToStudent> {
                       );
                     },
                     child: Text('Сохранить'),
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.of(context).pop(); // Закрыть диалоговое окно
-                    },
-                    child: Text('Отменить'),
                   ),
                 ],
               );
