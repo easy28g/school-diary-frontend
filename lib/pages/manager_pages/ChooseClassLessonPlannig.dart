@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 import 'ManagersHome.dart';
 import 'ManagersProfileMenu.dart';
-import 'PlanOneDay.dart';
+import 'SchedulePlanning.dart';
 
-class SchedulePlanning extends StatefulWidget {
+class ChooseClassLessonPlanning extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() => _SchedulePlanningState();
+  State<StatefulWidget> createState() => _ChooseClassLessonPlanningState();
 }
 
-class _SchedulePlanningState extends State<SchedulePlanning> {
+class _ChooseClassLessonPlanningState extends State<ChooseClassLessonPlanning> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('VibeTime Күндөлүк'),
+        title: Text('VibeTime журнал'),
         centerTitle: true,
       ),
       body: Container(
@@ -25,6 +25,7 @@ class _SchedulePlanningState extends State<SchedulePlanning> {
               child: Column(
                 children: [
                   Text('Средняя школа №1', style: TextStyle(fontSize: 20)),
+                  Text('Учебный год: 2023-2024', style: TextStyle(fontSize: 20)),
                 ],
               ),
             ),
@@ -33,16 +34,13 @@ class _SchedulePlanningState extends State<SchedulePlanning> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PlanOneDay(),
-                    settings: RouteSettings(
-                      arguments: 'Понедельник'
-                    ),
+                    builder: (context) => SchedulePlanning(),
                   ),
                 );
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
-                child: Text('Понедельник', style: TextStyle(fontSize: 20)),
+                child: Text('Класс 10А', style: TextStyle(fontSize: 20)),
               ),
             ),
             InkWell(
@@ -50,16 +48,13 @@ class _SchedulePlanningState extends State<SchedulePlanning> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PlanOneDay(),
-                    settings: RouteSettings(
-                        arguments: 'Вторник'
-                    ),
+                    builder: (context) => SchedulePlanning(),
                   ),
                 );
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
-                child: Text('Вторник', style: TextStyle(fontSize: 20)),
+                child: Text('Класс 10Б', style: TextStyle(fontSize: 20)),
               ),
             ),
             InkWell(
@@ -67,16 +62,13 @@ class _SchedulePlanningState extends State<SchedulePlanning> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => PlanOneDay(),
-                    settings: RouteSettings(
-                        arguments: 'Среда'
-                    ),
+                    builder: (context) => SchedulePlanning(),
                   ),
                 );
               },
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
-                child: Text('Среда', style: TextStyle(fontSize: 20)),
+                child: Text('Класс 10В', style: TextStyle(fontSize: 20)),
               ),
             ),
           ],
@@ -87,7 +79,7 @@ class _SchedulePlanningState extends State<SchedulePlanning> {
           if (index == 0) {
             Navigator.pushReplacement(
               context,
-            MaterialPageRoute(builder: (context) => ManagersHome()),
+              MaterialPageRoute(builder: (context) => ManagersHome()),
             );
           } else if (index == 2) {
             Navigator.pushReplacement(

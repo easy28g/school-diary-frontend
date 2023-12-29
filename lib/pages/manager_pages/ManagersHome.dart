@@ -4,12 +4,12 @@ import 'AddStudent.dart';
 import 'AddSubjects.dart';
 import 'AddSubjectsToTeacher.dart';
 import 'AddTeacher.dart';
+import 'ChooseClassLessonPlannig.dart';
 import 'DeleteStudent.dart';
 import 'DeleteTeacher.dart';
 import 'ListGroups.dart';
 import 'ListTeachers.dart';
 import 'ManagersProfileMenu.dart';
-import 'SchedulePlanning.dart';
 
 class ManagersHome extends StatefulWidget {
   @override
@@ -198,7 +198,7 @@ class _ManagersHomeState extends State<ManagersHome> {
           if (index == 1) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => SchedulePlanning()),
+              MaterialPageRoute(builder: (context) => ChooseClassLessonPlanning()),
             );
           } else if (index == 2) {
             Navigator.pushReplacement(
