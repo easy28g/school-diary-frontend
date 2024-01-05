@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'ManagersHome.dart';
-
-class Item {
-
-  Item({
-    required this.headerText,
-    required this.expandedText,
-    this.isExpanded = false,
-  });
-
-  String headerText;
-  Widget expandedText;
-  bool isExpanded;
-
-}
+import 'SelectedGroup.dart';
 
 class ListGroups extends StatefulWidget {
   @override
@@ -23,62 +9,76 @@ class ListGroups extends StatefulWidget {
 
 class _ListGroupsState extends State<ListGroups> {
 
-
-  final List<Item> _data = List<Item>.generate(11, (index) {
-      return Item(
-        headerText: '${index + 1} Класс',
-        expandedText: ListView(
-          shrinkWrap: true,
-          children: [
-            ListTile(
-              title: Text('A'),
-              subtitle: Text('Количество: 35'),
-            ),
-            ListTile(
-              title: Text('Б'),
-              subtitle: Text('Количество: 34'),
-            ),
-            ListTile(
-              title: Text('В'),
-              subtitle: Text('Количество: 34'),
-            ),
-            ListTile(
-              title: Text('Г'),
-              subtitle: Text('Количество: 35'),
-            ),
-          ],
-        ),
-      );
-    },
-  );
-
   @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
-        title: Text('Список классов'),
+        title: Text('VibeTime Күндөлүк'),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: ExpansionPanelList(
-          expansionCallback: (int index, bool isExpanded) {
-            setState((){
-              _data[index].isExpanded = isExpanded;
-            });
-          },
-          children: _data.map<ExpansionPanel>((Item item) {
-            return ExpansionPanel(
-              headerBuilder: (BuildContext context, bool isExpanded){
-                return ListTile(
-                  title: Text(item.headerText),
+      body: Container(
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Column(
+                children: [
+                  Text('Список классов', style: TextStyle(fontSize: 20)),
+                ],
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectedGroup(),
+                    settings: RouteSettings(
+                      arguments: 'Класс 10А',
+                    )
+                  ),
                 );
               },
-              body: ListTile(
-                title: item.expandedText,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
+                child: Text('Класс 10А', style: TextStyle(fontSize: 20)),
               ),
-              isExpanded: item.isExpanded,
-            );
-          }).toList(),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectedGroup(),
+                      settings: RouteSettings(
+                        arguments: 'Класс 10Б',
+                      )
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
+                child: Text('Класс 10Б', style: TextStyle(fontSize: 20)),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => SelectedGroup(),
+                      settings: RouteSettings(
+                        arguments: 'Класс 10В',
+                      )
+                  ),
+                );
+              },
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(25.0, 8.0, 8.0, 8.0),
+                child: Text('Класс 10В', style: TextStyle(fontSize: 20)),
+              ),
+            ),
+          ],
         ),
       ),
     );
