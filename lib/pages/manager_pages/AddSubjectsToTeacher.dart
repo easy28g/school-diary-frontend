@@ -86,13 +86,33 @@ class _AddSubjectsToTeacherState extends State<AddSubjectsToTeacher> {
                       child: ElevatedButton(
                         onPressed: () {
                           print('Предмет: ${_selectedSubjects}');
-                          _selectedSubjects.clear();
-                          Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => ManagersHome(),
-                            ),
-                                (route) => false,
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Сохранить?'),
+                                actions: [
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // Закрыть диалоговое окно
+                                    },
+                                    child: Text('Нет'),
+                                  ),
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // Закрыть виджет SetHomework
+                                      Navigator.pop(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => ManagersHome(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text('Да'),
+                                  ),
+                                ],
+                              );
+                            },
                           );
                         },
                         child: Text('Сохранить'),

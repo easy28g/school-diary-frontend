@@ -41,12 +41,33 @@ class _AddSubjectsState extends State<AddSubjects> {
                 List<String> subjects = _subjectControllers.map((controller) => controller.text).toList();
                 print(_subjectControllers[0].text);
                 print(subjects);
-                Navigator.pushAndRemoveUntil(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => ManagersHome(),
-                  ),
-                      (route) => false,
+                showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return AlertDialog(
+                      title: Text('Добавить предмет?'),
+                        actions: [
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(); // Закрыть диалоговое окно
+                          },
+                          child: Text('Нет'),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop(); // Закрыть виджет SetHomework
+                            Navigator.pop(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ManagersHome(),
+                              ),
+                            );
+                          },
+                          child: Text('Да'),
+                        ),
+                      ],
+                    );
+                  },
                 );
               },
               child: Text('Сохранить'),

@@ -91,17 +91,36 @@ class _AddStudentState extends State<AddStudent> {
                   print('Дата рождения: $_selectedDate');
                   print('Адрес: ${_addressController.text}');
                   print('Класс: ${_classController.text}');
-                  _lastNameController.clear();
-                  _firstNameController.clear();
-                  _middleNameController.clear();
-                  _addressController.clear();
-                  _classController.clear();
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ManagersHome(),
-                    ),
-                        (route) => false,
+                  String firstname = _firstNameController.text;
+                  String secondname = _lastNameController.text;
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Добавить ученика?'),
+                        content: Text('${firstname} ${secondname}'),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop(); // Закрыть диалоговое окно
+                            },
+                            child: Text('Нет'),
+                          ),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop(); // Закрыть виджет SetHomework
+                              Navigator.pop(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ManagersHome(),
+                                ),
+                              );
+                            },
+                            child: Text('Да'),
+                          ),
+                        ],
+                      );
+                    },
                   );
                 },
                 child: Text('Зарегистрировать ученика'),
